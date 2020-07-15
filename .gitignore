@@ -1,0 +1,4 @@
+vendor/
+bin/
+.cache
+.test_coverage.txt
