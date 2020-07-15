@@ -1,4 +1,4 @@
 vendor/
 bin/
 .cache
-.test_coverage.txt
+coverage.out

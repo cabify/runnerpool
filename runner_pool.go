@@ -97,7 +97,7 @@ func (w *worker) Release() {
 	w.once.Do(func() { close(w.released) })
 }
 
-// Worker returns an error, if possible withing the provided context, otherwise it will return ctx.Err()
+// Worker returns an error, if possible within the provided context, otherwise it will return ctx.Err()
 func (p *WorkerPool) Worker(ctx context.Context) (Worker, error) {
 	select {
 	case w := <-p.workers:

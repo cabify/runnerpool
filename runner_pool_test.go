@@ -243,11 +243,8 @@ func goRunner(f func()) { go f() }
 
 func recoverFromPanics(f func()) {
 	go func() {
-		defer func() {
-			if err := recover(); err != nil {
-				// recover the panic
-			}
-		}()
+		// deferring recover() directly causes a warning in linters, IDEs, etc, so we defer an anonoymous function calling recover()
+		defer func() { recover() }()
 		f()
 	}()
 }
