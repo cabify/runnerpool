@@ -1,5 +1,8 @@
 # runnerpool
 
+[![Build Status](https://travis-ci.com/cabify/runnerpool.svg?branch=master)](https://travis-ci.com/cabify/runnerpool)
+[![Coverage Status](https://coveralls.io/repos/github/cabify/runnerpool/badge.svg?branch=master)](https://coveralls.io/github/cabify/runnerpool?branch=master)
+
 Library that offers a bounded pool of goroutines to perform deserved jobs.
 
 # Usage
