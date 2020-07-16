@@ -12,11 +12,14 @@ func BenchmarkCreatePool(b *testing.B) {
 			for i := 0; i < b.N; i++ {
 				cfg := Config{Workers: n}
 				pool := New(cfg, goRunner)
-				err := pool.Start()
-				_ = err
-				b.StopTimer()
+				_ = pool.Start()
+				w, err := pool.Worker(context.Background())
+				if err != nil {
+					panic(err)
+				}
+				w.Release()
+
 				_ = pool.Stop(context.Background())
-				b.StartTimer()
 			}
 		})
 	}
